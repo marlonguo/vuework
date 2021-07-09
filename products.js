@@ -13,11 +13,9 @@ const productsHandler = (e) => {
   const action = e.target.dataset.action;
   if (action === 'delete') {
     const id = e.target.dataset.id;
-    console.log(id);
     App.deleteProduct(id);
   } else if (action === 'enable') {
     const id = e.target.dataset.id;
-    console.log(id);
     App.changeProductStatus(id);
   }
 };
