@@ -11,11 +11,9 @@ const loginHandler = (event) => {
   const data = { username, password };
 
   axios.post(api, data).then((res) => {
-    console.log(res);
     const data = res.data;
     if (data.success) {
       const { token, expired } = data;
-      console.log(token, expired);
       document.cookie = `hexToken=${token};expires=${new Date(
         expired,
       )} ;path=/`;

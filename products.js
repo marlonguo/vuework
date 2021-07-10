@@ -96,7 +96,6 @@ const App = {
       window.location = 'login.html';
     }
     axios.defaults.headers.common['Authorization'] = token;
-    // axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
     this.getData();
   },
 };
