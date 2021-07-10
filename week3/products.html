@@ -11,10 +11,15 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
   </head>
 
   <body>
-    <div id="app">
+    <div id="app" v-cloak>
       <div class="container">
         <div class="text-end mt-4">
           <button class="btn btn-primary" @click.prevent="openModal('new', {})">
