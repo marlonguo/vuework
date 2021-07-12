@@ -58,23 +58,30 @@ const app = createApp({
           } else {
             alert(res.data.message);
           }
+          this.tempProduct = {};
+          productModal.hide();
         })
         .catch((error) => {
           console.log(error);
         });
-      this.tempProduct = {};
-      productModal.hide();
     },
     deleteProduct(product) {
-      axios.delete(`${api.product}/${product.id}`).then((res) => {
-        if (res.data.success) {
-          const index = this.products.findIndex(
-            (item) => item.id === product.id,
-          );
-          this.products.splice(index, 1);
-        }
-      });
-      delProductModal.hide();
+      axios
+        .delete(`${api.product}/${product.id}`)
+        .then((res) => {
+          if (res.data.success) {
+            const index = this.products.findIndex(
+              (item) => item.id === product.id,
+            );
+            this.products.splice(index, 1);
+          } else {
+            alert(res.data.message);
+          }
+          delProductModal.hide();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
   mounted() {
